@@ -13,6 +13,17 @@ public class PostController {
 	public String login(@ModelAttribute ("loginVarInForm") Login login){
 		System.out.println(login.getUsername() + " " + login.getPassword());
 		return "post";
+		//return "forward:fwdLogin.html";
+		//or return "redirect:fwdLogin.html";  ---> closes the current request and starts a new request. The obtained info are not carried over.
 	}
-
+	
+	//Forwarding example :
+	/*******
+	 * @RequestMapping(value = "/fwdLogin")
+	public String fwdLogin(@ModelAttribute ("loginVarInForm") Login login){
+		System.out.println(login.getUsername() + " in fwd route " + login.getPassword());
+		return "post";
+	}
+	 *
+	 */
 }
